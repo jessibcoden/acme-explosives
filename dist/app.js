@@ -128,12 +128,17 @@ const domString = (products) => {
 	let productString = '';
 	for(let i = 0; i < products.length; i++) {
 		let productCard = '';
-		productCard += `<card class="col">
+		if(i%3 === 0){
+			productCard += `<div class="row" id="cardRow">`;
+		}
+		productCard += `<card class="col-md-3 col-md-offset-1 boxShaddow category-${products[i].categoryId}" id="productCard">
 							<h3> ${products[i].name} </h3>
-							<h4> ${products[i].categoryName} <h4>
-							<h5> ${products[i].description} <h5>
+							<h4> ${products[i].categoryName} </h4>
+							<h5> ${products[i].description} </h5>
 					   </card>`;
-
+		if(i%3 === 2){
+			productCard += `</div>`;
+		}
 		productString += productCard;
 	}
 	printToDom(productString);
@@ -147,10 +152,44 @@ module.exports = domString;
 },{}],3:[function(require,module,exports){
 "use strict";
 
+const products = require('./data');
+
+$('#ground').click((event) => {
+	displayGround();
+});
+
+const displayGround = () => {
+	$('.category-0').addClass('hidden');
+	$('.category-1').removeClass('hidden');
+};
+
+$('#aerial').click((event) => {
+	displayAerial();
+});
+
+const displayAerial = () => {
+	$('.category-1').addClass('hidden');
+	$('.category-0').removeClass('hidden');
+};
+
+$('#all').click((event) => {
+	displayAll();
+});
+
+const displayAll = () => {
+	$('.category-1').removeClass('hidden');
+	$('.category-0').removeClass('hidden');
+};
+
+module.exports = {};
+},{"./data":1}],4:[function(require,module,exports){
+"use strict";
+
 const data = require("./data.js");
+const events = require("./events");
 
 $(document).ready(function() {
 	data.initializer();
 });
 
-},{"./data.js":1}]},{},[3]);
+},{"./data.js":1,"./events":3}]},{},[4]);
