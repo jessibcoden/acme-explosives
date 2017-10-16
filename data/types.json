@@ -1,24 +1,21 @@
 {
-	"categories": [
-		{
+	"types": [{
 			"id": 0,
-			"type": 0,
+			"category": 0,
 			"name": "Cakes",
 			"description": "Sometimes referred to as 'repeaters' or 'multi-shot aerials', a cake is an item that has a single fuse which is used to light several tubes in sequence. Cakes can have a variety of intricate aerial effects, including spinners, fish, flower bouquets, comets, crossettes, and other elements."
 		},
 		{
 			"id": 1,
-			"type": 1,
+			"category": 1,
 			"name": "Fountains",
 			"description": "A ground device that emits showers of sparks several feet in the air."
 		},
 		{
 			"id": 1,
-			"type": 2,
+			"category": 1,
 			"name": "Smoke Items",
-			"description": "Produces a smoke effects, including smoke balls and aerial items that produce smoke instead of light or noise. Smoke items are generally used during the daytime.
-
-"
+			"description": "Produces a smoke effects, including smoke balls and aerial items that produce smoke instead of light or noise. Smoke items are generally used during the daytime."
 		}
 	]
 }

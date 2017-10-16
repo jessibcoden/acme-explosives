@@ -7,49 +7,49 @@
 			"description": "What's up? A dozen shots of triple stage whistling silver crackling comets, that's what!"
 		},
 		"spleen_splitters":{
-			"id": 0,
+			"id": 1,
 			"type": 0,
 			"name": "Spleen Splitter",
 			"description": "Reloadable artillery shell, great height and triple break, spectacular bursts."
 		},
 		"whisker_biscuit":{
-			"id": 1,
+			"id": 2,
 			"type": 1,
 			"name": "Whisker Biscuit",
 			"description": "Shoots sprays of silvery showers with a loud whistle."
 		},
 		"honkey_lighter":{
-			"id": 0,
+			"id": 3,
 			"type": 0,
 			"name": "Honkey Lighter",
 			"description": "Oh, beautiful these Patriot skies! Let your patriotism ring out at the twilight's last gleaming when you stand and salute these 12 shots of true America color: red, white, and blue stars with red tails."
 		},
 		"husker_do":{
-			"id": 0,
-			"type": 2,
+			"id": 4,
+			"type": 0,
 			"name": "Husker Do",
 			"description": "Aerial multi-colored smoke rises high for a daytime show in the sky."
 		},
 		"husker_donts":{
-			"id": 1,
-			"type": 2,
+			"id": 5,
+			"type": 1,
 			"name": "Husker Don't",
 			"description": "Multi-color smoke stays low allowing for a quick, stealthy get away."
 		},
 		"nipsy_daises":{
-			"id": 0,
+			"id": 6,
 			"type": 1,
 			"name": "Nipsy Daiser with Scooter Stick",
 			"description": "Replenish your senses and fire up your electrical impulse with hot blue sparks, silver flower, sparks, and titanium crackles."
 		},
 		"cherry_bombs":{
-			"id": 1,
-			"type": 2,
+			"id": 7,
+			"type": 1,
 			"name": "Cherry Bomb",
 			"description": "Don't forget to add some smoke to your show! These smoke balls can be used during day or night, emitting colorful smoke and thick fog."
 		},
 		"whistling_kitty_chasers":{
-			"id": 1,
+			"id": 8,
 			"type": 1,
 			"name": "Whistling Kitty Chaser",
 			"description": "Loud! Long-lasting whistle with brilliant gold and silver spray."

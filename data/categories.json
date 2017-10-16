@@ -2,11 +2,11 @@
 	"categories": [
 		{
 			"id": 0,
-			"name": "aerial"
+			"name": "Aerial"
 		},
 		{
 			"id": 1,
-			"name": "ground"
+			"name": "Ground"
 		}
 	]
 }
