@@ -10,7 +10,6 @@ let products = [];
 var categoriesJSON = () => {
 	return new Promise((resolve, reject) => {
 		$.ajax('./data/categories.json').done((data1) => {
-			console.log("cats", data1);
 			resolve(data1.categories);
 		}).fail((error1) => {
 			reject(error1);
@@ -49,9 +48,48 @@ const dataGetter = () => {
 		results3.forEach((product) => {
 			products.push(product);
 		});
-		// makeDinos();
+		let finishedProducts = smooshData(types, categories, products);
+		console.log("products", finishedProducts);
+		// pass finishedProducts into dom function here
+		dom(finishedProducts);
 	});
+
 };
+
+
+// first add category info to types array
+// then add types to products array
+const smooshData = (types, categories, products) => {
+	let productArray = [];
+	let productKeys = Object.keys(products[0]);
+	console.log(productKeys);
+	categories.forEach((category) => {
+			console.log("something");
+		types.forEach((type) => {
+			if(category.id === type.category){
+			type.categoryName = category.name;
+			}	
+		});
+	});
+	productKeys.forEach((product) => {
+		let newProduct = {};
+		console.log(products[0][product].type);
+		types.forEach((type) => {
+			if(products[0][product].type === type.id){
+				newProduct.categoryName = type.categoryName;
+				newProduct.categoryId = type.category;
+				newProduct.typeName = type.name;
+				newProduct.typeDescription = type.description;
+				newProduct.name = products[0][product].name;
+				newProduct.description = products[0][product].description;
+			}	
+		});
+		productArray.push(newProduct);
+	});
+	return productArray;
+};
+
+
 
 // const makeDinos = () => {
 // 	dinosaurs.forEach(function(dino){
@@ -84,7 +122,28 @@ module.exports = {initializer: initializer, getCategories: categories, getTypes:
 
 
 },{"./dom.js":2}],2:[function(require,module,exports){
+"use strict";
 
+const domString = (products) => {
+	let productString = '';
+	for(let i = 0; i < products.length; i++) {
+		let productCard = '';
+		productCard += `<card class="col">
+							<h3> ${products[i].name} </h3>
+							<h4> ${products[i].categoryName} <h4>
+							<h5> ${products[i].description} <h5>
+					   </card>`;
+
+		productString += productCard;
+	}
+	printToDom(productString);
+};
+
+const printToDom = (strang) => {
+	$('#products').html(strang);
+};
+
+module.exports = domString;
 },{}],3:[function(require,module,exports){
 "use strict";
 

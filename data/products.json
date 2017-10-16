@@ -38,7 +38,7 @@
 		},
 		"nipsy_daises":{
 			"id": 6,
-			"type": 1,
+			"type": 2,
 			"name": "Nipsy Daiser with Scooter Stick",
 			"description": "Replenish your senses and fire up your electrical impulse with hot blue sparks, silver flower, sparks, and titanium crackles."
 		},
@@ -50,7 +50,7 @@
 		},
 		"whistling_kitty_chasers":{
 			"id": 8,
-			"type": 1,
+			"type": 2,
 			"name": "Whistling Kitty Chaser",
 			"description": "Loud! Long-lasting whistle with brilliant gold and silver spray."
 		}

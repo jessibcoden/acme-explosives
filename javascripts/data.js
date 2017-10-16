@@ -9,7 +9,6 @@ let products = [];
 var categoriesJSON = () => {
 	return new Promise((resolve, reject) => {
 		$.ajax('./data/categories.json').done((data1) => {
-			console.log("cats", data1);
 			resolve(data1.categories);
 		}).fail((error1) => {
 			reject(error1);
@@ -48,34 +47,48 @@ const dataGetter = () => {
 		results3.forEach((product) => {
 			products.push(product);
 		});
-		let finishedProducts = smooshData();
+		let finishedProducts = smooshData(types, categories, products);
+		console.log("products", finishedProducts);
 		// pass finishedProducts into dom function here
+		dom(finishedProducts);
 	});
+
 };
 
 
 // first add category info to types array
 // then add types to products array
-const smooshData (types, categories, products) => {
+const smooshData = (types, categories, products) => {
+	let productArray = [];
+	let productKeys = Object.keys(products[0]);
+	console.log(productKeys);
 	categories.forEach((category) => {
+			console.log("something");
 		types.forEach((type) => {
 			if(category.id === type.category){
 			type.categoryName = category.name;
 			}	
 		});
 	});
-	products.forEach((product) => {
+	productKeys.forEach((product) => {
+		let newProduct = {};
+		console.log(products[0][product].type);
 		types.forEach((type) => {
-			if(product.type === type.id){
-			product.categoryName = type.categoryName;
-			product.categoryId = type.category;
-			product.typeName = type.name;
-			product.typeDescription = type.description;
+			if(products[0][product].type === type.id){
+				newProduct.categoryName = type.categoryName;
+				newProduct.categoryId = type.category;
+				newProduct.typeName = type.name;
+				newProduct.typeDescription = type.description;
+				newProduct.name = products[0][product].name;
+				newProduct.description = products[0][product].description;
 			}	
 		});
+		productArray.push(newProduct);
 	});
-	return products;
+	return productArray;
 };
+
+
 
 // const makeDinos = () => {
 // 	dinosaurs.forEach(function(dino){
